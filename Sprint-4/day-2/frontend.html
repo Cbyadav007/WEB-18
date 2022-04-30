@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Frontend</title>
+        <style>
+            #container{
+               
+                width:80%;
+                height:500px;
+                display:flex;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <h1>I am Frontend</h1>
+       
+        <div id="container">
+            
+        </div>
+    </body>
+</html>
+
+<script>
+//document.querySelector("#but").addEventListener("click",getFun);
+//function getFun()
+//{
+    var investor=JSON.parse(localStorage.getItem("investorData"));
+    console.log(investor);
+    investor.forEach(function (elem)
+    {
+        var box=document.createElement("div");
+        box.style.marginLeft="20px";
+        box.style.width="25%";
+        box.style.height="80%";
+       // box.style.border="1px solid black";
+        box.style.textAlign="center";
+        var avatar=document.createElement("img");
+        avatar.setAttribute("src",elem.invImage);
+        avatar.style.width="100%";
+        avatar.style.height="60%";
+        var name=document.createElement("h3");
+         name.innerText=elem.invName;
+        var role=document.createElement("p");
+        role.innerText=elem.invRole;
+        var logo=document.createElement("img");
+        logo.setAttribute("src",elem.invLogo);
+        logo.style.width="100px";
+        logo.style.height="50px";
+        box.append(avatar,name,role,logo);
+        document.querySelector("#container").append(box);
+    });
+//}
+    
+    
+  
+</script>

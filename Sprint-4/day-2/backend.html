@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Backend</title>
+    </head>
+    <body>
+        <h1>I am Backend</h1>
+        <form id="invForm">
+            Image url: <input id="imgs" type="text" placeholder="Enter image url"> 
+            Name: <input id="nam" type="text" placeholder="Enter Name">
+            Role: <input id="rol" type="text" placeholder="Enter your Role in Company">
+            Logo: <input id="log" type="text" placeholder="Enter logo url">
+            <input id="but" type="button" value="submit">
+        </form>
+    </body>
+</html>
+<script>
+    document.querySelector("#but").addEventListener("click",subFun);
+    var invArr=null || [];
+    function subFun(){
+        event.preventDefault();
+        invObj={
+            invImage:document.querySelector("#imgs").value,
+            invName:document.querySelector("#nam").value,
+            invRole:document.querySelector("#rol").value,
+            invLogo:document.querySelector("#log").value,
+        };
+        invArr.push(invObj);
+        localStorage.setItem("investorData",JSON.stringify(invArr));
+        console.log(invArr);
+        
+    }
+</script>

@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Signup</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <h1>masai.</h1>
+       <div class="box">
+        <h2>Sign Up</h2>
+        <p class="name">Full Name</p>
+        <input id="nam" type="text" placeholder="Enter Your name">
+        <p class="email">Email</p>
+        <input id="em" type="text" placeholder="Enter Email">
+        <p class="password">Password</p>
+        <input id="pass" type="password" required placeholder="Enter Password">
+        <p>By signing up, I accept the Masai School <a href="">Terms of Services</a> and 
+        acknowledge the <a href="">Privacy Policy</a></p>
+        <button id="signup">SIGN UP</button>
+        <button id="Sign in"><a href="signin.html">SIGN IN</a> </button>
+       </div> 
+    </body>
+</html>
+<script>
+    var userArr=[];
+document.querySelector("#signup").addEventListener("click",signupFun);
+function signupFun()
+{
+   
+var userObj={
+    name:document.querySelector("#nam").value,
+    email:document.querySelector("#em").value,
+    password:document.querySelector("#pass").value,
+}
+console.log(userObj);
+userArr.push(userObj);
+    localStorage.setItem("userDetails",JSON.stringify(userArr));
+}
+
+</script>
